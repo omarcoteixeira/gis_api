@@ -29,7 +29,7 @@ def get_ndvi_map(document_id):
 
     response = make_response(bio.getvalue())
     response.headers['Content-Type'] = 'image/png'
-    response.headers['Content-Disposition'] = 'filename=%s.png' % document_id
+    response.headers['Content-Disposition'] = 'filename=ndvi-%s.png' % document_id
     return response
 
 

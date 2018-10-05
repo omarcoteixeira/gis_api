@@ -1,9 +1,12 @@
 """GIS module."""
+import matplotlib
+matplotlib.use('TkAgg')
 
 import rasterio
 import numpy as np
+import matplotlib as plt
 
-from rasterio.plot import show_hist
+from rasterio.plot import show, show_hist, get_plt
 from common.utils import (
     make_image_from_arrays,
     get_image_from_plot
@@ -49,10 +52,12 @@ def get_map_ndvi(document_id):
 
 def get_histogram(document_id):
     raster = read_document(document_id)
+    figure = get_plt().gca()
 
     show_hist(
         raster, title='Histogram',
-        histtype='stepfilled', bins=50, lw=0.0, stacked=False, alpha=0.3
+        histtype='stepfilled', bins=50, lw=0.0, stacked=False, alpha=0.3,
+        ax=figure
     )
 
     return raster, get_image_from_plot()
