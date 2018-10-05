@@ -1,0 +1,8 @@
+flask
+pytest
+scikit-learn
+rasterio
+GDAL
+numpy
+matplotlib
+Pillow
