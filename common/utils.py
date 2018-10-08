@@ -7,7 +7,7 @@ from io import BytesIO
 from rasterio.plot import get_plt
 
 
-def get_image_from_plot(file_format='tiff'):
+def get_image_from_plot(file_format='png'):
     ib = BytesIO()
     plt = get_plt()
 
