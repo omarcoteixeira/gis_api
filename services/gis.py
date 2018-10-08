@@ -1,15 +1,18 @@
 """GIS module."""
 
 import rasterio
+import rasterio.features
+import rasterio.warp
 import numpy as np
-from matplotlib import pyplot as plt
 
+from matplotlib import pyplot as plt
 from rasterio.plot import show, show_hist
 from common.utils import (
     get_image_from_plot
 )
 
 
+META_RESOURCE_PATH = 'data/{}/meta.json'
 TRUE_COLOR_RESOURCE_PATH = 'data/{}/true_color.tif'
 BANDS_RESOURCE_PATH = 'data/{}/bands/{}.tif'
 NDVI_RESOURCE_PATH = 'data/{}/ndvi.tif'
@@ -80,6 +83,35 @@ def get_layers_map(document_id, layer):
         )
 
     return get_image_from_plot()
+
+
+def get_coordinates(document_id):
+    """
+    Souce: https://rasterio.readthedocs.io/en/latest/
+    :param document_id:
+    :return:
+    """
+    path = TRUE_COLOR_RESOURCE_PATH.format(document_id)
+
+    with rasterio.open(path) as dataset:
+        # Read the dataset's valid data mask as a ndarray.
+        mask = dataset.dataset_mask()
+
+        # Extract feature shapes and values from the array.
+        for geom, val in rasterio.features.shapes(
+                mask, transform=dataset.transform):
+            # Transform shapes from the dataset's own coordinate
+            # reference system to CRS84 (EPSG:4326).
+            geom = rasterio.warp.transform_geom(
+                dataset.crs, 'EPSG:4326', geom, precision=6)
+
+            return geom
+    return None
+
+
+def get_metadata(document_id):
+    path = META_RESOURCE_PATH.format(document_id)
+    return path
 
 
 def _resolve_ndvi(document_id):

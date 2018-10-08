@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
-const position = [51.505, -0.09];
+import Layer from "./Layer";
+import Histogram from "./Histogram";
+import SceneInfo from "./SceneInfo";
+import SelectedPoint from "./SelectedPoint";
+
+const position = [0, 0];
 class MapViewer extends Component {
 
     constructor(props) {
         super(props);
 
-        this.mapId = 'bd74fcb4-3f4a-4769-bc8f-a9a5c6cc8893';
-        this.apiPath = 'http://localhost:5000/document/';
-
-        this.defaultURL = this.apiPath.concat(this.mapId);
+        this.ndvi = false;
+        this.defaultURL = this.createURL();
     }
 
-    componentDidMount() {
-        // fetch()
-        //     .then(res => res.text())
-        //     .then(
-        //         (result) => {
-        //             console.log(result);
-        //         },
-        //         (error) => {
-        //             console.error(error);
-        //         }
-        //     )
+    componentDidMount() { }
+
+    createURL() {
+        const mapType = this.ndvi ? 'ndvi' : 'default';
+
+        this.mapId = 'bd74fcb4-3f4a-4769-bc8f-a9a5c6cc8893';
+        this.defaultURL = `http://localhost:5000/document/${this.mapId}/${mapType}/{z}/{x}/{y}`;
+        console.log(this.defaultURL);
+    }
+
+    onLayerChanged() {
+        console.log('Layer Changed.')
     }
 
     render() {
@@ -32,37 +36,24 @@ class MapViewer extends Component {
                 <div className="columns">
                     <div className="column is-full">
                         <div className="content map">
-                          <Map center={position} zoom={13}>
-                            <TileLayer
-                              url={this.defaultURL}
-                            />
-                            <Marker position={position}>
-                              <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
-                            </Marker>
+                          <Map center={position} zoom={-10}>
+                            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
                           </Map>
                         </div>
                     </div>
                 </div>
                 <div className="columns">
                     <div className="column">
-                        <div className="content">
-                            <h2 className="subtitle is-size-5">Camadas</h2>
-                        </div>
+                        <Layer mapId={this.mapId} onChange={this.onLayerChanged}/>
                     </div>
                     <div className="column">
-                        <div className="content">
-                            <h2 className="subtitle is-size-5">Histograma de NDVI</h2>
-                        </div>
+                        <Histogram mapId={this.mapId}/>
                     </div>
                     <div className="column">
-                        <div className="content">
-                            <h2 className="subtitle is-size-5">Informações da Cena</h2>
-                        </div>
+                        <SceneInfo mapId={this.mapId}/>
                     </div>
                     <div className="column">
-                        <div className="content">
-                            <h2 className="subtitle is-size-5">Ponto Selecionado</h2>
-                        </div>
+                        <SelectedPoint mapId={this.mapId}/>
                     </div>
                 </div>
             </div>
