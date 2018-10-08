@@ -1,8 +1,8 @@
 flask
 pytest
 scikit-learn
-rasterio
-GDAL
 numpy
+GDAL
+rasterio
 matplotlib
 Pillow
