@@ -35,7 +35,22 @@ def get_ndvi_map(document_id):
 
 @app.route('/document/<document_id>/histogram')
 def get_histogram_map(document_id):
-    return service.get_histogram(document_id)
+    bio = service.get_histogram(document_id)
+
+    response = make_response(bio.getvalue())
+    response.headers['Content-Type'] = 'image/png'
+    response.headers['Content-Disposition'] = 'filename=%s.png' % document_id
+    return response
+
+
+@app.route('/document/<document_id>/layers/<layer>')
+def get_layers_map(document_id, layer):
+    bio = service.get_layers_map(document_id, layer)
+
+    response = make_response(bio.getvalue())
+    response.headers['Content-Type'] = 'image/png'
+    response.headers['Content-Disposition'] = 'filename=%s.png' % document_id
+    return response
 
 
 if __name__ == "__main__":

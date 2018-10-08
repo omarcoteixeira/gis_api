@@ -2,10 +2,10 @@
 
 import rasterio
 import numpy as np
+from matplotlib import pyplot as plt
 
-from rasterio.plot import show_hist
+from rasterio.plot import show, show_hist
 from common.utils import (
-    make_image_from_arrays,
     get_image_from_plot
 )
 
@@ -13,10 +13,6 @@ from common.utils import (
 TRUE_COLOR_RESOURCE_PATH = 'data/{}/true_color.tif'
 BANDS_RESOURCE_PATH = 'data/{}/bands/{}.tif'
 NDVI_RESOURCE_PATH = 'data/{}/ndvi.tif'
-
-# TRUE_COLOR_RESOURCE_PATH = '../data/{}/true_color.tif'
-# BANDS_RESOURCE_PATH = '../data/{}/bands/{}.tif'
-# NDVI_RESOURCE_PATH = '../data/{}/ndvi.tif'
 
 
 def read_document(document_id):
@@ -31,7 +27,10 @@ def read_document_band(document_id, band):
 
 def get_map(document_id):
     raster = read_document(document_id)
-    return make_image_from_arrays(raster.read())
+    plt.show = lambda: None
+
+    show(raster.read(), title='Default')
+    return get_image_from_plot()
 
 
 def get_map_bands(document_id, band=None):
@@ -42,26 +41,45 @@ def get_map_bands(document_id, band=None):
 
 def get_map_ndvi(document_id):
     path = _resolve_ndvi(document_id)
-    raster = rasterio.open(path)
+    raster = rasterio.open(path).read(1)
+    plt.show = lambda: None
 
-    return make_image_from_arrays(raster.read())
+    show(raster, title='NDVI')
+    return get_image_from_plot()
 
 
 def get_histogram(document_id):
     raster = read_document(document_id)
+    plt.show = lambda: None
 
     show_hist(
         raster, title='Histogram',
         histtype='stepfilled', bins=50, lw=0.0, stacked=False, alpha=0.3
     )
 
-    return raster, get_image_from_plot()
+    return get_image_from_plot()
 
 
-def show_layers(document_id):
+def get_layers_map(document_id, layer):
     raster = read_document(document_id)
 
-    return raster
+    cases = {
+        'reds': 1,
+        'greens': 2,
+        'blues': 3
+    }
+    case = cases[layer.lower()]
+    title = layer.lower().title()
+
+    if case:
+        plt.show = lambda: None
+        show(
+            (raster, case),
+            title=title,
+            cmap=title
+        )
+
+    return get_image_from_plot()
 
 
 def _resolve_ndvi(document_id):

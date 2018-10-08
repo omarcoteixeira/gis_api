@@ -7,7 +7,7 @@ from io import BytesIO
 from rasterio.plot import get_plt
 
 
-def get_image_from_plot(file_format='png'):
+def get_image_from_plot(file_format='tiff'):
     ib = BytesIO()
     plt = get_plt()
 
@@ -15,7 +15,7 @@ def get_image_from_plot(file_format='png'):
     plt.close()
     ib.seek(0)
 
-    return ib.getvalue()
+    return ib
 
 
 def get_base64_from_plot(ib, file_format='png'):
