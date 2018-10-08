@@ -18,7 +18,7 @@ def get_image_from_plot(file_format='tiff'):
     return ib
 
 
-def get_base64_from_plot(ib, file_format='png'):
+def get_base64_from_plot(file_format='png'):
     return base64.b64encode(get_image_from_plot(file_format).getvalue())
 
 

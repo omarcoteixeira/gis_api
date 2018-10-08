@@ -2,8 +2,11 @@ import logging
 
 from flask import Flask, make_response
 from services import gis as service
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
+
 app.logger.addHandler(logging.StreamHandler())
 app.logger.setLevel(logging.INFO)
 
