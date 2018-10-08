@@ -28,5 +28,5 @@ def test_get_document_ndvi_map():
 
 
 def test_document_histogram():
-    r, histogram_base64 = service.get_histogram(DOCUMENT_ID)
-    assert r and histogram_base64
+    image = service.get_histogram(DOCUMENT_ID)
+    assert image

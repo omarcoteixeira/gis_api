@@ -6,3 +6,4 @@ GDAL
 numpy
 matplotlib
 Pillow
+flask-cors
