@@ -6,3 +6,4 @@ GDAL
 rasterio
 matplotlib
 Pillow
+flask-cors
