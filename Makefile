@@ -1,4 +1,4 @@
-export FLASK_ENV=development
+export FLASK_ENV=production
 
 frontend-install:
 	npm i --prefix frontend;

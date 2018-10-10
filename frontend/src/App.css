@@ -3,6 +3,12 @@
     margin: 20px;
 }
 
-.map {
-    max-height: 400px;
+.map-controls {
+    padding: 10px;
+    font-size: 12px;
+}
+
+.map-container {
+   position: relative;
+    height: 500px;
 }

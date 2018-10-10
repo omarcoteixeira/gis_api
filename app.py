@@ -1,3 +1,6 @@
+import sys
+sys.settrace
+
 import matplotlib
 matplotlib.use('TkAgg')
 

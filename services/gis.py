@@ -16,6 +16,7 @@ from common.utils import (
 META_RESOURCE_PATH = 'data/{}/meta.json'
 TRUE_COLOR_RESOURCE_PATH = 'data/{}/true_color.tif'
 TRUE_COLOR_TILE_RESOURCE_PATH = 'data/{}/tiles/{}/{}/{}.png'
+NDVI_TILE_RESOURCE_PATH = 'data/{}/ndvi_tiles/{}/{}/{}.png'
 BANDS_RESOURCE_PATH = 'data/{}/bands/{}.tif'
 NDVI_RESOURCE_PATH = 'data/{}/ndvi.tif'
 
@@ -31,7 +32,7 @@ def read_document_band(document_id, band):
 
 
 def get_tile_path(document_id, z, x, y, ndvi=False):
-    raw_path = TRUE_COLOR_TILE_RESOURCE_PATH if not ndvi else NDVI_RESOURCE_PATH
+    raw_path = TRUE_COLOR_TILE_RESOURCE_PATH if not ndvi else NDVI_TILE_RESOURCE_PATH
     path = raw_path.format(document_id, z, x, y)
 
     if os.path.exists(path):

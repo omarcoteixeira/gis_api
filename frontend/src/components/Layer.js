@@ -15,7 +15,7 @@ class Layer extends Component {
                         <input type="checkbox" name="ndvi" onClick={() => this.props.onChange('ndvi')} /><span> NDVI</span>
                     </div>
                     <div>
-                        <input type="checkbox" name="truecolor" onClick={() => this.props.onChange('truecolor')} /><span> True Color</span>
+                        <input type="checkbox" name="truecolor" onClick={() => this.props.onChange('trueColor')} /><span> True Color</span>
                     </div>
                 </div>
             </div>

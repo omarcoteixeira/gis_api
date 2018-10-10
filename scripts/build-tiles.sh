@@ -7,10 +7,10 @@ for D in ./data/*; do
         ndviFile="${D}/ndvi.tif"
         ndviOutputPath="${D}/ndvi_tiles"
 
-        gdal2tiles.py --profile=mercator --zoom=11-15 "${trueColorFile}" "${trueColorOutputPath}"
+        gdal2tiles.py -p mercator -z 1-15 "${trueColorFile}" "${trueColorOutputPath}"
 
         python common/ndvi.py "${D}" "${ndviFile}"
-        gdal2tiles.py --profile=mercator --zoom=11-15 "${ndviFile}" "${ndviOutputPath}"
+        gdal2tiles.py -p mercator -z 1-15 "${ndviFile}" "${ndviOutputPath}"
     fi
 done
 
