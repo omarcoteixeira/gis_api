@@ -1,7 +1,14 @@
 import logging
 import os
 
-from flask import Flask, make_response, jsonify, json
+from flask import (
+    Flask,
+    make_response,
+    jsonify,
+    json,
+    send_from_directory
+)
+
 from services import gis as service
 from flask_cors import CORS
 
@@ -13,9 +20,10 @@ app.logger.setLevel(logging.INFO)
 
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
+
 @app.route('/')
 def home():
-    return ''
+    return 'OK', 200
 
 
 @app.route('/document/<document_id>/default/z/x/y')
