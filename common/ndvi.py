@@ -35,7 +35,7 @@ def resolve_ndvi(document_path, ndvi_output_path):
 
 
 def _read_document_band(document_path, band):
-    band_path = (document_path + '/bands/{}.tif').format(band)
+    band_path = (document_path + '/bands/{}.TIF').format(band)
     return rasterio.open(band_path)
 
 
