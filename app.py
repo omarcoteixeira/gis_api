@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('TkAgg')
+
 import logging
 import os
 
@@ -6,7 +9,7 @@ from flask import (
     make_response,
     jsonify,
     json,
-    send_from_directory
+    send_file
 )
 
 from services import gis as service
@@ -23,27 +26,27 @@ SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 @app.route('/')
 def home():
-    return 'OK', 200
+    return '', 200
 
 
-@app.route('/document/<document_id>/default/z/x/y')
+@app.route('/document/<document_id>/tms/<z>/<x>/<y>')
 def get_map(document_id, z, x, y):
-    bio = service.get_map(document_id)
+    bio = service.get_tile_path(document_id, z, x, y)
 
-    response = make_response(bio.getvalue())
-    response.headers['Content-Type'] = 'image/png'
-    response.headers['Content-Disposition'] = 'filename=%s.png' % document_id
-    return response, 200
+    return send_file(
+        bio,
+        mimetype='image/png'
+    ) if bio else jsonify({}), 200
 
 
-@app.route('/document/<document_id>/ndvi/z/x/y')
+@app.route('/document/<document_id>/ndvi/<z>/<x>/<y>')
 def get_ndvi_map(document_id, z, x, y):
-    bio = service.get_map_ndvi(document_id)
+    bio = service.get_tile_path(document_id, z, x, y, ndvi=True)
 
-    response = make_response(bio.getvalue())
-    response.headers['Content-Type'] = 'image/png'
-    response.headers['Content-Disposition'] = 'filename=%s.png' % document_id
-    return response, 200
+    return send_file(
+        bio,
+        mimetype='image/png'
+    ) if bio else jsonify({}), 200
 
 
 @app.route('/document/<document_id>/meta')

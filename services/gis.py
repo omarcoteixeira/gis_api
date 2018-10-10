@@ -1,5 +1,6 @@
 """GIS module."""
 
+import os
 import rasterio
 import rasterio.features
 import rasterio.warp
@@ -8,12 +9,14 @@ import numpy as np
 from matplotlib import pyplot as plt
 from rasterio.plot import show, show_hist
 from common.utils import (
-    get_image_from_plot
+    get_image_from_plot,
+    get_image
 )
 
 
 META_RESOURCE_PATH = 'data/{}/meta.json'
 TRUE_COLOR_RESOURCE_PATH = 'data/{}/true_color.tif'
+TRUE_COLOR_TILE_RESOURCE_PATH = 'data/{}/tiles/{}/{}/{}.png'
 BANDS_RESOURCE_PATH = 'data/{}/bands/{}.tif'
 NDVI_RESOURCE_PATH = 'data/{}/ndvi.tif'
 
@@ -26,6 +29,17 @@ def read_document(document_id):
 def read_document_band(document_id, band):
     path = BANDS_RESOURCE_PATH.format(document_id, band)
     return rasterio.open(path)
+
+
+def get_tile_path(document_id, z, x, y, ndvi=False):
+    raw_path = TRUE_COLOR_TILE_RESOURCE_PATH if not ndvi else NDVI_RESOURCE_PATH
+    path = raw_path.format(document_id, z, x, y)
+
+    if os.path.exists(path):
+        with open(path, 'rb') as doc:
+            return get_image(doc.read())
+    else:
+        return None
 
 
 def get_map(document_id):

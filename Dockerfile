@@ -8,5 +8,4 @@ WORKDIR /server
 RUN ./scripts/build-docker.sh
 RUN make install
 
-CMD bash ./scripts/build-tiles.sh
-#CMD make run
+CMD bash ./scripts/build-tiles.sh && make run

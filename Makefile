@@ -1,12 +1,10 @@
 export FLASK_ENV=development
 
-setup:
-	conda install -c virtualenv;                \
-	conda create -n venv python=2.7 anaconda;   \
-	/bin/bash -c "source activate venv";
+frontend-install:
+	npm i --prefix frontend;
 
-ci-install: setup
-	pip install -r requirements.txt
+frontend-run: frontend-install
+	npm run-script start --prefix frontend;
 
 install:
 	pip install -r requirements.txt
@@ -15,4 +13,4 @@ test:
 	pytest tests
 
 run:
-	python app.py
+	python app.py;

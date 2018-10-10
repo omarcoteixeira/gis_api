@@ -43,3 +43,8 @@ def make_image_from_arrays(bands, mode='RGB'):
 
 def _make_image(arr):
     return Image.fromarray(arr.astype(np.float32)).convert('L')
+
+
+def get_image(arr):
+    bio = BytesIO(arr)
+    return bio

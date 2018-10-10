@@ -221,4 +221,4 @@ pip-selfcheck.json
 
 # End of https://www.gitignore.io/api/code,python,intellij+all
 
-.pyc
+*.pyc
