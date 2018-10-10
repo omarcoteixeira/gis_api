@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+pwd
+ls -la
 for D in ./data/*; do
     if [ -d "${D}" ]; then
         trueColorFile="${D}/true_color.tif"

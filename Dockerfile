@@ -1,6 +1,12 @@
-FROM continuumio/anaconda
+
+FROM atcochrane/anaconda-gdal
+
 ADD . /server
+
 WORKDIR /server
+
 RUN ./scripts/build-docker.sh
-RUN make ci-install
-CMD make run
+RUN make install
+
+CMD bash ./scripts/build-tiles.sh
+#CMD make run
