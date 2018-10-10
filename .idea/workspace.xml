@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c28ad94-ed17-4aac-af22-6441d01ad437" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/common/ndvi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/bd74fcb4-3f4a-4769-bc8f-a9a5c6cc8893/ndvi.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/build-docker.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build-docker.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/build-tiles.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build-tiles.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/gis.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/gis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/gis/test_service_gis.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/gis/test_service_gis.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +40,7 @@
           <entry key="js" value="1076" />
           <entry key="json" value="11" />
           <entry key="md" value="1023" />
-          <entry key="py" value="1770" />
+          <entry key="py" value="1771" />
           <entry key="sh" value="181" />
           <entry key="txt" value="1" />
           <entry key="yml" value="71" />
@@ -67,7 +55,7 @@
           <entry key="JavaScript" value="1076" />
           <entry key="Markdown" value="1023" />
           <entry key="PLAIN_TEXT" value="415" />
-          <entry key="Python" value="1770" />
+          <entry key="Python" value="1771" />
           <entry key="YAML" value="71" />
         </counts>
       </usages-collector>
@@ -82,7 +70,7 @@
           <entry key="json" value="1" />
           <entry key="md" value="2" />
           <entry key="png" value="9" />
-          <entry key="py" value="16" />
+          <entry key="py" value="17" />
           <entry key="sh" value="4" />
           <entry key="tif" value="1" />
           <entry key="tiff" value="1" />
@@ -101,7 +89,7 @@
           <entry key="JavaScript" value="8" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="16" />
+          <entry key="Python" value="17" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -112,7 +100,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
+            <state relative-caret-position="442">
               <caret line="65" column="47" lean-forward="true" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
             </state>
           </provider>
@@ -130,23 +118,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="223" column="1" selection-start-line="223" selection-start-column="1" selection-end-line="223" selection-end-column="1" />
+            <state relative-caret-position="1487">
+              <caret line="223" column="5" lean-forward="true" selection-start-line="223" selection-start-column="5" selection-end-line="223" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/gis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="16">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding>
-                <element signature="e#19#28#0" expanded="true" />
-                <marker date="1539200747841" expanded="true" signature="888:1079" ph="..." />
+                <marker date="1539200962097" expanded="true" signature="869:1060" ph="..." />
               </folding>
             </state>
           </provider>
@@ -164,12 +151,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/ndvi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
+            <state relative-caret-position="176">
               <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
               <folding>
                 <element signature="e#1#11#0" expanded="true" />
                 <marker date="1539200620286" expanded="true" signature="955:960" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/gis/test_service_gis.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -206,6 +202,8 @@
       <find>setu</find>
       <find>make</find>
       <find>pyc</find>
+      <find>ndvi</find>
+      <find>get_map_ndvi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -216,7 +214,6 @@
       <list>
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/.matplotlib/matplotlibrc" />
-        <option value="$PROJECT_DIR$/tests/gis/test_service_gis.py" />
         <option value="$PROJECT_DIR$/frontend/src/components/Layers.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/SelectedPoint.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/SceneInfo.js" />
@@ -237,9 +234,10 @@
         <option value="$PROJECT_DIR$/frontend/README.md" />
         <option value="$PROJECT_DIR$/scripts/build-tiles.sh" />
         <option value="$PROJECT_DIR$/common/ndvi.py" />
-        <option value="$PROJECT_DIR$/services/gis.py" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/tests/gis/test_service_gis.py" />
+        <option value="$PROJECT_DIR$/services/gis.py" />
       </list>
     </option>
   </component>
@@ -294,6 +292,17 @@
               <item name="gis_api" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="bd74fcb4-3f4a-4769-bc8f-a9a5c6cc8893" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gis_api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gis_api" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gis_api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gis_api" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="gis" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -553,7 +562,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29256082" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29256082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" />
@@ -567,7 +576,7 @@
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32961586" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.42627013" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.42627013" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32961586" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32977587" />
@@ -873,13 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/gis/test_service_gis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="51" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -961,32 +963,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/ndvi.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
-          <folding>
-            <element signature="e#1#11#0" expanded="true" />
-            <marker date="1539200620286" expanded="true" signature="955:960" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/gis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#19#28#0" expanded="true" />
-            <marker date="1539200747841" expanded="true" signature="888:1079" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="65" column="47" lean-forward="true" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
+        <state relative-caret-position="1487">
+          <caret line="223" column="5" lean-forward="true" selection-start-line="223" selection-start-column="5" selection-end-line="223" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1000,10 +980,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="223" column="1" selection-start-line="223" selection-start-column="1" selection-end-line="223" selection-end-column="1" />
+        <state relative-caret-position="442">
+          <caret line="65" column="47" lean-forward="true" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/gis/test_service_gis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/ndvi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+          <folding>
+            <element signature="e#1#11#0" expanded="true" />
+            <marker date="1539200620286" expanded="true" signature="955:960" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/gis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding>
+            <marker date="1539200962097" expanded="true" signature="869:1060" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

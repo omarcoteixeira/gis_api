@@ -4,7 +4,6 @@ import os
 import rasterio
 import rasterio.features
 import rasterio.warp
-import numpy as np
 
 from matplotlib import pyplot as plt
 from rasterio.plot import show, show_hist
@@ -54,15 +53,6 @@ def get_map_bands(document_id, band=None):
     raster = read_document_band(document_id, band) \
         if band else read_document(document_id)
     return raster.read()
-
-
-def get_map_ndvi(document_id):
-    path = _resolve_ndvi(document_id)
-    raster = rasterio.open(path).read(1)
-    plt.show = lambda: None
-
-    show(raster, title='NDVI')
-    return get_image_from_plot()
 
 
 def get_histogram(document_id):
@@ -126,35 +116,3 @@ def get_coordinates(document_id):
 def get_metadata(document_id):
     path = META_RESOURCE_PATH.format(document_id)
     return path
-
-
-def _resolve_ndvi(document_id):
-    """
-    Source: http://www.loicdutrieux.net/pyLandsat/NDVI_calc.html
-    :param document_id:
-    :return:
-    """
-    math_type = rasterio.float32
-
-    raster_red = read_document_band(document_id, 'B04')  # Red
-    raster_nir = read_document_band(document_id, 'B08')  # Near Infrared
-
-    red = raster_red.read(1)
-    nir = raster_nir.read(1)
-
-    # Allow division by zero
-    np.seterr(divide='ignore', invalid='ignore')
-    ndvi = (nir.astype(math_type) - red.astype(math_type)) / (nir + red)
-
-    output = NDVI_RESOURCE_PATH.format(document_id)
-
-    kwargs = raster_red.meta
-    kwargs.update(
-        dtype=math_type,
-        count=1
-    )
-
-    with rasterio.open(output, 'w', **kwargs) as dst:
-        dst.write_band(1, ndvi.astype(math_type))
-
-    return output
