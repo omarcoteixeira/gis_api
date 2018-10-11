@@ -12,10 +12,10 @@ class Layer extends Component {
                 <div className="content has-text-left">
                     <h2 className="subtitle is-size-5">Camadas</h2>
                     <div>
-                        <input type="checkbox" name="ndvi" onClick={() => this.props.onChange('ndvi')} /><span> NDVI</span>
+                        <input type="checkbox" name="ndvi" onClick={() => this.props.onLayerChange('ndvi')} /><span> NDVI</span>
                     </div>
                     <div>
-                        <input type="checkbox" name="truecolor" onClick={() => this.props.onChange('trueColor')} /><span> True Color</span>
+                        <input type="checkbox" name="truecolor" onClick={() => this.props.onLayerChange('trueColor')} /><span> True Color</span>
                     </div>
                 </div>
             </div>

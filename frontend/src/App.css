@@ -9,6 +9,7 @@
 }
 
 .map-container {
-   position: relative;
+    position: relative;
     height: 500px;
+    visibility: hidden;
 }

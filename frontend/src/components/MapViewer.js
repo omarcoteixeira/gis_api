@@ -48,7 +48,7 @@ class MapViewer extends Component {
             )
     }
 
-    onLayerChanged(layer) {
+    onLayerChange(layer) {
         this.state.layers[layer] = !this.state.layers[layer];
     }
 
@@ -107,7 +107,7 @@ class MapViewer extends Component {
                 <div className="box map-controls">
                     <div className="columns">
                         <div className="column">
-                            <Layer mapId={this.mapId} onChange={this.onLayerChanged}/>
+                            <Layer mapId={this.mapId} onLayerChange={this.onLayerChange.bind(this)}/>
                         </div>
                         <div className="column">
                             <Histogram mapId={this.mapId}/>
